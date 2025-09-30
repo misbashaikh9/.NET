@@ -1,0 +1,39 @@
+1)xmal file 
+2)cs file
+3)model file
+4)ViewModel
+
+
+model.cs 
+--a)
+ internal class Model1 : INotifyPropertyChanged  (resovled error in b step)
+ {
+--b)
+for remove the  INotifyPropertyChanged error then go to error show potential and then addd the throws method
+then add new throw method
+--c)
+(then write propfull to get sert method change variable name and update there all for that varible)
+public  String name 
+{
+	get { return _name; }
+	set { _name = value; onpropertyChanged(nameof(name)); }
+}
+
+--d) to remove the error of onpropertyChanged(string v)   go to show potential
+
+private void onpropertyChanged(string v)
+{
+    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(v));
+   
+}
+
+4) View Model
+
+ internal class ViewModel1
+ {
+     public Model1 p { get; } = new Model1() {name="Misba"}; //add this only
+ }
+
+
+
+//WPF8 WITH THE INOTIFY ONE WITHOUT INOTIFY
